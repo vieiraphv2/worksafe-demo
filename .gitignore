@@ -1,0 +1,7 @@
+# Só as três páginas públicas entram no repositório. A proposta e as notas internas ficam fora.
+*
+!.gitignore
+!.nojekyll
+!index.html
+!demo.html
+!diagrama.html

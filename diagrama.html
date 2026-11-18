@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WorkSafe · Mapa funcional</title>
+<style>
+:root{--bg:#f5f5f7;--card:#fff;--ink:#1d1d1f;--ink2:#6e6e73;--ink3:#86868b;--line:#c2c2c7;--blue:#0071e3;--bluebg:#e8f1fd;--fill:rgba(118,118,128,.12);--sep:rgba(0,0,0,.08);--segon:#fff}
+/* Tema escuro desligado para a reunião. Para religar, troque "not all" pela condição (prefers-color-scheme:dark). */
+@media not all{:root{--bg:#000;--card:#1c1c1e;--ink:#f5f5f7;--ink2:#a1a1a6;--ink3:#8e8e93;--line:#545458;--blue:#2997ff;--bluebg:#10294a;--fill:rgba(118,118,128,.24);--sep:rgba(255,255,255,.12);--segon:#636366}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1560px;margin:0 auto;padding:28px 24px 56px}
+header{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+h1{font-size:32px;line-height:1.1;letter-spacing:-.02em;margin:0 0 6px;font-weight:700}
+.sub{color:var(--ink2);margin:0}
+.pill{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;font-size:14px;font-weight:500;padding:8px 16px;border-radius:980px}
+.bar{display:flex;gap:14px 28px;flex-wrap:wrap;margin-bottom:18px}
+.grp{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lbl{font-size:12px;color:var(--ink3);font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+.seg{display:inline-flex;flex-wrap:wrap;background:var(--fill);border-radius:10px;padding:2px;gap:2px}
+.seg button{border:0;background:none;font:inherit;font-size:13px;font-weight:500;color:var(--ink);padding:6px 12px;border-radius:8px;cursor:pointer}
+.seg button.on{background:var(--segon);box-shadow:0 1px 3px rgba(0,0,0,.14)}
+.main{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:20px;align-items:start}
+figure{margin:0;min-width:0}
+.scroll{overflow-x:auto}
+svg{display:block;width:100%;min-width:900px;height:auto}
+figcaption{display:flex;gap:8px 22px;flex-wrap:wrap;color:var(--ink2);font-size:13px;margin-top:12px}
+figcaption i{display:inline-block;vertical-align:middle;margin-right:7px}
+.k1{width:26px;border-top:2px solid var(--blue)}
+.k2{width:26px;border-top:2px solid var(--ink)}
+.k3{width:18px;height:12px;border:1.5px dashed var(--ink2);border-radius:4px}
+.k4{width:26px;height:10px;background:var(--card);border-radius:4px}
+
+svg text{font-family:inherit;fill:var(--ink)}
+.bgr{fill:transparent}
+.col{font-size:10.5px;font-weight:600;letter-spacing:.07em;fill:var(--ink3)}
+.read{fill:none;stroke:var(--line);stroke-width:1.5;stroke-dasharray:5 5}
+.nd{cursor:pointer;outline:none}
+.nd rect{fill:var(--card);stroke:transparent;stroke-width:2}
+.nd:hover rect,.nd:focus-visible rect{stroke:var(--line)}
+.nd .t{font-size:14px;font-weight:600}
+.nd .s{font-size:11.5px;fill:var(--ink2)}
+.nd.band .s{font-size:12px}
+.nd.sel rect{stroke:var(--blue);stroke-width:2.5}
+.nd.wr rect{stroke:var(--blue);stroke-width:1.5}
+.nd.rd rect{stroke:var(--ink2);stroke-width:1.5;stroke-dasharray:5 4}
+.nd.fade{opacity:.45}
+.nd.off{opacity:.3}
+.ed{fill:none;stroke:var(--line);stroke-width:1.5}
+.ed.out{stroke:var(--blue);stroke-width:2.25}
+.ed.in{stroke:var(--ink);stroke-width:1.75}
+.ed.fade{opacity:.16}
+.mk0{fill:var(--line)}.mk1{fill:var(--blue)}.mk2{fill:var(--ink)}
+.lb rect{fill:var(--blue)}
+.lb text,.bd text{fill:#fff;font-size:11px;font-weight:600}
+.bd circle{fill:var(--blue)}
+
+.panel{background:var(--card);border-radius:18px;padding:22px;position:sticky;top:16px;max-height:calc(100vh - 32px);overflow:auto}
+.panel h2{font-size:22px;margin:0 0 4px;letter-spacing:-.01em}
+.panel h3{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink3);margin:22px 0 6px;font-weight:600}
+.panel p{margin:0 0 10px;color:var(--ink2)}
+.panel ol{margin:0;padding-left:20px;color:var(--ink2)}
+.panel li{margin-bottom:6px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:12px;background:var(--fill);border-radius:980px;padding:3px 10px;color:var(--ink)}
+.chip.e{background:var(--bluebg);color:var(--blue)}
+.note{font-size:12px;color:var(--ink3);margin-top:8px}
+.fn{display:block;width:calc(100% + 24px);margin:0 -12px;text-align:left;border:0;background:none;font:inherit;color:inherit;padding:10px 12px;border-radius:12px;cursor:pointer}
+.fn+.fn{box-shadow:inset 0 1px 0 var(--sep)}
+.fn:hover{background:var(--fill)}
+.fn.on,.fn.on:hover{background:var(--bluebg);box-shadow:none}
+.fn.on+.fn{box-shadow:none}
+.fn b{display:block;font-weight:600}
+.fn span{display:block;color:var(--ink2);font-size:13px}
+.fn .k{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink3);font-weight:600;margin-top:10px}
+.fn .v{color:var(--ink)}
+.flow{background:var(--bluebg);border-radius:14px;padding:16px;margin-bottom:18px}
+.flow .eye{font-size:12px;font-weight:600;color:var(--blue);letter-spacing:.03em}
+.flow .n{font-size:18px;font-weight:700;margin:2px 0 8px}
+.flow p{color:var(--ink);margin:0 0 14px}
+.btns{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.btn{border:0;background:var(--blue);color:#fff;font:inherit;font-size:14px;font-weight:500;padding:7px 16px;border-radius:980px;cursor:pointer}
+.btn.sec{background:var(--card);color:var(--blue)}
+.btn:disabled{opacity:.35;cursor:default}
+.lnk{border:0;background:none;color:var(--blue);font:inherit;font-size:13px;cursor:pointer;margin-left:auto}
+@media (max-width:1180px){.main{grid-template-columns:1fr}.panel{position:static;max-height:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div><h1>Mapa funcional</h1><p class="sub">Como as páginas e as funções do WorkSafe Compliance se ligam.</p></div>
+  <a class="pill" href="demo.html">Abrir a demo</a>
+</header>
+<div class="bar">
+  <div class="grp"><span class="lbl">Fluxo</span><div class="seg" id="flows"></div></div>
+  <div class="grp"><span class="lbl">Perfil</span><div class="seg" id="roles"></div></div>
+</div>
+<div class="main">
+  <figure>
+    <div class="scroll" id="fig"></div>
+    <figcaption>
+      <span><i class="k1"></i>Seta azul: a função cria ou altera algo na outra página</span>
+      <span><i class="k2"></i>Seta escura: outra página grava nesta</span>
+      <span><i class="k3"></i>Tracejado: página consultada, sem alteração</span>
+      <span><i class="k4"></i>Faixas: valem para todas as páginas</span>
+    </figcaption>
+  </figure>
+  <aside class="panel" id="panel"></aside>
+</div>
+</div>
+<script>
+const W=1150,H=580;
+// Páginas. Colunas: pessoas, centro, prevenção, leitura. Faixas (band) valem para todas.
+const P={
+ aj:{n:'Ajustes',s:'Perfis, usuários, escopo, cargos e tipos de tarefa. Vale para todas as páginas.',x:30,y:24,w:900,h:50,band:1,d:'Configuração da empresa. O que se define aqui muda o que cada página mostra e exige.'},
+ log:{n:'Login',s:'e-mail e senha',x:960,y:24,h:50,d:'Porta de entrada. O e-mail identifica o usuário. O perfil e o escopo dele definem o que cada página mostra.'},
+ pes:{n:'Pessoas',s:'prontuário e processos',x:30,y:120,d:'Cadastro e prontuário de cada pessoa. Admissão, rescisão, saúde, disciplina e defesa partem daqui. O prontuário mostra os documentos, as férias e as pendências da pessoa.'},
+ fer:{n:'Férias',s:'períodos e avisos',x:30,y:260,d:'Programação de férias individuais e coletivas, com o limite do período concessivo.'},
+ jor:{n:'Jornada e folha',s:'ponto e divergências',x:30,y:400,d:'Conferência do ponto e da folha do mês. Cada divergência recebe um tratamento antes da liberação.'},
+ fun:{n:'Área do funcionário',s:'no celular',x:340,y:120,d:'O que o funcionário faz no próprio celular. Ele só vê os próprios dados.'},
+ doc:{n:'Documentos',s:'versões e assinaturas',x:340,y:260,d:'Todo documento com versão, validade e assinatura. É a prova de cada ato.'},
+ tar:{n:'Tarefas',s:'prazo e evidência',x:340,y:400,d:'Tudo que precisa ser feito, com responsável, prazo e evidência. As outras páginas criam e resolvem tarefas aqui.'},
+ nr1:{n:'NR-1',s:'pesquisa e plano',x:650,y:120,d:'Pesquisa anônima de riscos psicossociais por setor e plano de ação.'},
+ rel:{n:'Relatos',s:'canal e dossiês',x:650,y:260,d:'Canal de relatos sigiloso. Relatos semelhantes viram dossiê de apuração.'},
+ nor:{n:'Normas',s:'CCT, ACT e regras',x:650,y:400,d:'Convenções, acordos e políticas internas. Cada cláusula validada vira regra.'},
+ ini:{n:'Início',s:'painel do perfil',x:960,y:120,d:'Painel de cada perfil: Dono, Jurídico, RH/DP e SST. Um perfil novo escolhe qual painel usar.'},
+ rep:{n:'Relatórios',s:'por tema, exportável',x:960,y:260,d:'Relatórios prontos por tema. Mostram só o que o escopo e o perfil permitem.'},
+ ass:{n:'Assistente',s:'perguntas e respostas',x:960,y:400,d:'Responde perguntas com base nos dados da empresa. Na demo, as respostas são simuladas.'},
+ aud:{n:'Auditoria',s:'Toda ação fica registrada: quem fez, o quê e quando.',x:30,y:510,w:535,h:50,band:1,d:'Trilha de tudo que acontece no sistema. Ninguém edita a trilha.'},
+ not:{n:'Notificações',s:'Cada mudança avisa quem precisa agir.',x:585,y:510,w:535,h:50,band:1,d:'O sino de cada usuário e os avisos no celular do funcionário.'}
+};
+Object.entries(P).forEach(([id,p])=>{p.id=id;p.w=p.w||160;p.h=p.h||60});
+
+// Funções. w = cria ou altera [página, rótulo da seta]. r = consulta [página, o quê]. av = quem é avisado. ro = só leitura (sem registro de alteração).
+const F=[
+ {id:'l1',p:'log',n:'Entrar',d:'E-mail e senha. O sistema abre o painel do perfil. O funcionário cai na área própria, no celular.',r:[['aj','perfil, unidade e setor do usuário']],w:[['ini','abre o painel']],ro:1},
+ {id:'l2',p:'log',n:'Recuperar senha',d:'Envia um link de redefinição para o e-mail. Simulado na demo.',ro:1},
+
+ {id:'f1',p:'fun',n:'Assinar ou dar ciência',d:'O funcionário assina o documento ou registra ciência.',w:[['doc','assinatura']],av:'RH da unidade'},
+ {id:'f2',p:'fun',n:'Enviar atestado',d:'Foto do atestado e número de dias.',w:[['doc','atestado'],['tar','validar atestado']],av:'RH com acesso à área de saúde'},
+ {id:'f3',p:'fun',n:'Enviar relato',d:'O relato recebe um protocolo de acompanhamento.',w:[['rel','relato com protocolo']],av:'quem tem acesso ao assunto do relato'},
+ {id:'f4',p:'fun',n:'Responder pesquisa NR-1',d:'Seis perguntas. A resposta é anônima e conta para o setor.',w:[['nr1','resposta anônima']]},
+
+ {id:'p1',p:'pes',n:'Admitir pessoa',d:'O checklist de admissão nasce dos requisitos do cargo.',r:[['aj','requisitos do cargo: EPI, treinamentos e exames']],w:[['tar','tarefa de admissão']]},
+ {id:'p2',p:'pes',n:'Concluir etapa de admissão ou rescisão',d:'Cada etapa exige evidência. A última etapa resolve a tarefa.',w:[['tar','resolve a tarefa']],av:'Jurídico e Dono, quando a rescisão termina'},
+ {id:'p3',p:'pes',n:'Abrir desligamento',d:'Checagem preventiva antes da decisão. A empresa cancela, pede análise jurídica ou prossegue com justificativa.',r:[['doc','atestado recente, documento vencido ou sem assinatura'],['rel','dossiê aberto no setor']],w:[['tar','rescisão ou análise']],av:'Jurídico. O Dono também, se a empresa prossegue com alertas'},
+ {id:'p4',p:'pes',n:'Aplicar medida disciplinar',d:'Advertência ou suspensão. A suspensão mostra alertas antes.',w:[['doc','medida para assinar'],['tar','análise jurídica']],av:'funcionário, para assinar. Jurídico, para analisar'},
+ {id:'p5',p:'pes',n:'Registrar EPI, treinamento ou atestado',d:'Gera a ficha de EPI, o certificado ou o atestado no prontuário.',w:[['doc','ficha ou certificado']],av:'funcionário, para assinar a ficha de EPI'},
+ {id:'p6',p:'pes',n:'Programar férias',d:'Atalho do prontuário para a programação de férias.',w:[['fer','abre a programação']]},
+ {id:'p7',p:'pes',n:'Pedir análise jurídica',d:'A dúvida vira tarefa para o Jurídico.',w:[['tar','análise jurídica']],av:'Jurídico'},
+ {id:'p8',p:'pes',n:'Transferir de unidade',d:'Os documentos seguem a pessoa. O histórico fica no prontuário.',w:[['doc','documentos seguem']]},
+ {id:'p9',p:'pes',n:'Preparar defesa',d:'Reúne as provas de um ex-funcionário em um só lugar.',r:[['doc','documentos e assinaturas'],['tar','tarefas e evidências'],['fer','férias'],['jor','ponto e folha'],['nor','normas'],['rel','dossiês'],['ini','orientações jurídicas']],ro:1},
+
+ {id:'v1',p:'fer',n:'Programar férias',d:'Individuais ou coletivas. O sistema confere o limite do período concessivo.',w:[['doc','aviso de férias'],['tar','resolve a tarefa']],av:'funcionário, para assinar o aviso'},
+
+ {id:'j1',p:'jor',n:'Importar ponto e folha',d:'Gera a lista de divergências do mês. Simulado na demo.'},
+ {id:'j2',p:'jor',n:'Tratar divergência',d:'Justificar, abrir pendência ou enviar ao Jurídico.',w:[['tar','tarefa de folha']],av:'Jurídico, quando recebe a análise'},
+ {id:'j3',p:'jor',n:'Liberar o fechamento do mês',d:'Registra quem liberou e quando.'},
+
+ {id:'d1',p:'doc',n:'Criar documento ou nova versão',d:'Do zero ou a partir de um modelo. Cada versão fica guardada.'},
+ {id:'d2',p:'doc',n:'Pedir assinatura',d:'O documento aparece no celular do funcionário. Há lembrete.',w:[['fun','pedido de assinatura']],av:'funcionário'},
+ {id:'d3',p:'doc',n:'Registrar recusa de assinatura',d:'A recusa fica registrada com testemunhas.'},
+ {id:'d4',p:'doc',n:'Validar atestado',d:'A triagem aponta duplicidade. O RH valida ou recusa.',w:[['tar','resolve a tarefa']],av:'funcionário'},
+
+ {id:'t1',p:'tar',n:'Criar tarefa',d:'O tipo define o prazo e a criticidade padrão.',r:[['aj','tipos de tarefa']],av:'responsável'},
+ {id:'t2',p:'tar',n:'Incluir atualização',d:'Texto e anexo, do dispositivo ou da área de documentos. Pode resolver a tarefa.',r:[['doc','anexo']],av:'responsável. Dono e Jurídico, quando a tarefa é resolvida'},
+ {id:'t3',p:'tar',n:'Validar resolução',d:'Quem fiscaliza confirma a evidência.',av:'quem resolveu'},
+ {id:'t4',p:'tar',n:'Escalonar tarefa vencida',d:'Automático. A tarefa crítica sobe ao Dono. As demais sobem ao Jurídico.',av:'Dono ou Jurídico'},
+
+ {id:'n1',p:'nr1',n:'Abrir ciclo da pesquisa',d:'A pesquisa aparece no celular de todos.',w:[['fun','pesquisa disponível']],av:'todos os funcionários'},
+ {id:'n2',p:'nr1',n:'Plano de ação',d:'Ações por setor, com evidência e avaliação de eficácia.'},
+
+ {id:'r1',p:'rel',n:'Receber e acompanhar relato',d:'Só vê o relato quem tem acesso ao assunto.',r:[['aj','acesso sigiloso por assunto']]},
+ {id:'r2',p:'rel',n:'Abrir dossiê automático',d:'Três relatos semelhantes no mesmo setor em 30 dias abrem um dossiê.',w:[['tar','tarefa crítica']],av:'quem acessa o assunto. O Dono também'},
+ {id:'r3',p:'rel',n:'Apurar no dossiê',d:'Etapas com evidência, medidas e acesso por caso. O caso pode ir ao Jurídico.',w:[['tar','análise jurídica']],av:'Jurídico'},
+ {id:'r4',p:'rel',n:'Concluir dossiê',d:'Registra a conclusão. O trabalhador acompanha pelo protocolo.',w:[['tar','resolve a tarefa']],av:'Dono e Jurídico'},
+
+ {id:'c1',p:'nor',n:'Cadastrar norma',d:'CCT, ACT ou política interna. A leitura das cláusulas é simulada na demo.'},
+ {id:'c2',p:'nor',n:'Validar cláusula',d:'A cláusula vira regra ativa e substitui a regra anterior.',w:[['tar','tarefa de adequação']],av:'RH da unidade'},
+ {id:'c3',p:'nor',n:'Sugerir alteração de regra',d:'O RH sugere. O Jurídico avalia.',w:[['tar','sugestão ao Jurídico']],av:'Jurídico'},
+
+ {id:'i1',p:'ini',n:'Índice de conformidade',d:'Itens em dia divididos por itens verificados, por tema.',r:[['doc','assinaturas e validades'],['pes','documentos faltantes, certificados e rescisões'],['fer','período concessivo'],['tar','prazos']],ro:1},
+ {id:'i2',p:'ini',n:'Maturidade trabalhista',d:'Nível por critérios: dados observados e questionário.',r:[['doc',''],['pes',''],['tar',''],['aj','cargos e usuários']],ro:1},
+ {id:'i3',p:'ini',n:'Pendências e alertas do perfil',d:'Cada item abre a página de origem.',r:[['tar','vencidas e críticas'],['rel','alertas e casos'],['nr1','sinais por setor'],['nor','normas a vencer'],['fer','férias']],ro:1},
+ {id:'i4',p:'ini',n:'Orientações jurídicas',d:'O Jurídico emite. O RH responde: acolhe ou justifica.',av:'RH e Dono na emissão. Jurídico na resposta'},
+
+ {id:'e1',p:'rep',n:'Gerar relatório',d:'Por tema, dentro do escopo e do perfil. Sai para impressão ou PDF.',r:[['pes',''],['doc',''],['tar',''],['nr1','']],ro:1},
+
+ {id:'a1',p:'ass',n:'Responder pergunta',d:'Consulta normas, prontuários, documentos e tarefas. Simulado na demo, por palavras-chave.',r:[['nor','cláusulas e regras'],['pes','prontuário'],['doc',''],['tar','']],ro:1},
+ {id:'a2',p:'ass',n:'Pedir análise jurídica',d:'A pergunta vira tarefa para o Jurídico.',w:[['tar','análise jurídica']],av:'Jurídico'},
+
+ {id:'g1',p:'aj',n:'Empresas e filiais',d:'Grupo, empresa e filial. O escopo escolhido filtra todas as páginas.'},
+ {id:'g2',p:'aj',n:'Perfis e permissões',d:'Por módulo: sem acesso, consulta ou edição. Por área de dados, como saúde, disciplinar e folha.',w:[['ini','painel do perfil']]},
+ {id:'g3',p:'aj',n:'Usuários',d:'Perfil, unidade e setor de cada usuário.',av:'o usuário alterado'},
+ {id:'g4',p:'aj',n:'Acesso sigiloso',d:'Define quem vê cada assunto de relato.',w:[['rel','quem vê cada assunto']]},
+ {id:'g5',p:'aj',n:'Cargos e setores',d:'Requisitos do cargo: EPI, treinamentos e periodicidade de exames.',w:[['pes','requisitos e checklist']]},
+ {id:'g6',p:'aj',n:'Tipos de tarefa',d:'Prazo e criticidade padrão de cada tipo.',w:[['tar','prazo padrão']]},
+ {id:'g7',p:'aj',n:'Implantação e portabilidade',d:'Importa a planilha de pessoas. Exporta todos os dados da empresa.',w:[['pes','importação de pessoas']]},
+
+ {id:'u1',p:'aud',n:'Consultar a trilha',d:'Filtro por tipo, pessoa e unidade. Itens sigilosos têm marca própria.',ro:1},
+ {id:'o1',p:'not',n:'Sino e celular',d:'Cada aviso abre a tela onde a pessoa precisa agir.',ro:1}
+];
+const FN=Object.fromEntries(F.map(f=>[f.id,f]));
+
+// Fluxos: [função, narração]
+const FL=[
+ {id:'adm',n:'Admissão',steps:[
+  ['p1','O RH admite a pessoa. O checklist vem dos requisitos do cargo. Nasce a tarefa de admissão.'],
+  ['p5','O RH registra a entrega de EPI. A ficha vai para assinatura.'],
+  ['f1','O funcionário assina no celular. O RH recebe o aviso.'],
+  ['p2','O RH conclui cada etapa com evidência. A última etapa resolve a tarefa.'],
+  ['i1','O índice de conformidade passa a contar a nova pessoa.']]},
+ {id:'des',n:'Desligamento',steps:[
+  ['p3','O RH abre o desligamento. O sistema consulta documentos e dossiês e mostra os alertas.'],
+  ['p3','A empresa decide: cancelar, pedir análise jurídica ou prosseguir com justificativa. A decisão cria a tarefa e avisa o Jurídico.'],
+  ['p2','O RH conclui as etapas da rescisão com evidência. A última etapa resolve a tarefa e avisa Jurídico e Dono.'],
+  ['p9','Se houver ação trabalhista, a defesa reúne todas as provas da pessoa.']]},
+ {id:'ate',n:'Atestado',steps:[
+  ['f2','O funcionário envia o atestado pelo celular. Nasce o documento e a tarefa de validação.'],
+  ['d4','O RH vê a triagem e valida ou recusa. A tarefa fica resolvida. O funcionário recebe o aviso.'],
+  ['p3','Mais tarde, o atestado recente aparece como alerta se alguém abrir o desligamento dessa pessoa.']]},
+ {id:'rel',n:'Relatos',steps:[
+  ['f3','O funcionário envia um relato pelo celular e recebe um protocolo.'],
+  ['r2','O terceiro relato semelhante no setor abre o dossiê e uma tarefa crítica.'],
+  ['p3','Enquanto o dossiê está aberto, um desligamento no setor mostra alerta de retaliação.'],
+  ['r3','O responsável apura no dossiê, com evidência em cada etapa.'],
+  ['r4','A conclusão resolve a tarefa e avisa Dono e Jurídico.']]},
+ {id:'fol',n:'Folha',steps:[
+  ['j1','O Financeiro importa o ponto e a folha. O sistema lista as divergências.'],
+  ['j2','Cada divergência recebe um tratamento. Pendência vira tarefa da Folha. Dúvida vira tarefa do Jurídico.'],
+  ['t2','O responsável inclui a atualização com o anexo e resolve a tarefa.'],
+  ['j3','Com tudo tratado, o mês é liberado. Fica registrado quem liberou.']]},
+ {id:'nor',n:'Norma coletiva',steps:[
+  ['c1','O Jurídico cadastra a nova CCT. O sistema separa as cláusulas.'],
+  ['c2','O Jurídico valida cada cláusula. Ela vira regra ativa e cria a tarefa de adequação para o RH.'],
+  ['t2','O RH adequa a operação e resolve a tarefa com evidência.'],
+  ['a1','O Assistente passa a responder com a regra nova.']]}
+];
+
+// Acesso padrão dos perfis na demo: 2 edita, 1 consulta, 0 sem acesso
+const MODS=['pes','doc','tar','rel','aud','aj','fer','jor','nr1','nor','rep','ass'];
+const ROLES={
+ dono:['Dono',[1,1,2,0,1,2,1,1,1,2,1,1]],
+ jur:['Jurídico',[1,1,2,2,1,0,0,1,1,2,1,1]],
+ rh:['RH / DP',[2,2,2,2,0,0,2,2,1,1,1,1]],
+ sst:['SST',[1,2,2,1,0,0,0,0,2,1,1,1]],
+ fin:['Financeiro',[1,1,2,0,0,0,1,2,0,1,1,1]],
+ func:['Funcionário',[]]
+};
+const acc=(r,p)=>p=='log'?1:r=='func'?(p=='fun'?2:p=='not'?1:0):p=='fun'?0:p=='ini'||p=='not'?1:ROLES[r][1][MODS.indexOf(p)];
+const accTxt=(r,p)=>{const a=acc(r,p);return !a?'sem acesso':p=='log'?'entrada':p=='ini'?'painel próprio':p=='not'?'recebe avisos':p=='fun'?'uso próprio':a==2?'edita':'consulta'};
+
+// Setas: uma por par de páginas. Faixas não têm seta.
+const E={};
+F.forEach(f=>(f.w||[]).forEach(([to,lb])=>{if(P[f.p].band||P[to].band)return;const k=f.p+'>'+to;(E[k]=E[k]||{a:f.p,b:to,fs:[]}).fs.push(lb)}));
+const BEND={'fun>tar':-215,'ass>tar':-110};
+Object.entries(E).forEach(([k,e])=>{
+ const A=P[e.a],B=P[e.b],x1=A.x+A.w/2,y1=A.y+A.h/2,x2=B.x+B.w/2,y2=B.y+B.h/2,dx=x2-x1,dy=y2-y1,L=Math.hypot(dx,dy),
+  b=BEND[k]??(E[e.b+'>'+e.a]?26:0),mx=(x1+x2)/2-dy/L*b,my=(y1+y2)/2+dx/L*b,pts=[];
+ for(let i=0;i<=100;i++){const u=i/100,v=1-u;pts.push([v*v*x1+2*v*u*mx+u*u*x2,v*v*y1+2*v*u*my+u*u*y2])}
+ const out=(q,R,pad)=>q[0]<R.x-pad||q[0]>R.x+R.w+pad||q[1]<R.y-pad||q[1]>R.y+R.h+pad;
+ e.seg=pts.slice(pts.findIndex(q=>out(q,A,3)),pts.findLastIndex(q=>out(q,B,6))+1);e.mid=e.seg[Math.round((e.seg.length-1)*(k=='fun>tar'?.74:.5))];if(k=='log>ini')e.mid=[e.mid[0]+57,e.mid[1]];
+});
+
+const S={page:null,fn:null,flow:null,step:0,role:''};
+const $=id=>document.getElementById(id);
+const curFlow=()=>FL.find(x=>x.id==S.flow);
+function sel(p){const same=S.page==p&&!S.fn;S.flow=S.fn=null;S.page=same?null:p;render()}
+function selFn(id){S.flow=null;S.page=FN[id].p;S.fn=S.fn==id?null:id;render()}
+function sync(){const st=curFlow().steps[S.step];S.fn=st[0];S.page=FN[st[0]].p}
+function flow(id){if(S.flow==id)return clr();S.flow=id;S.step=0;sync();render()}
+function step(d){S.step=Math.max(0,Math.min(curFlow().steps.length-1,S.step+d));sync();render()}
+function role(r){S.role=S.role==r?'':r;render()}
+function clr(){S.page=S.fn=S.flow=null;render()}
+onkeydown=e=>{if(e.key=='Escape')clr();if(S.flow&&e.key=='ArrowRight')step(1);if(S.flow&&e.key=='ArrowLeft')step(-1)};
+
+function render(){
+ const f=S.fn&&FN[S.fn],pg=S.page,wr=new Set(),rd=new Set(),st={},lab={};
+ if(f){
+  (f.w||[]).forEach(([to,lb])=>{const k=f.p+'>'+to;if(E[k]){st[k]='out';lab[k]=lb}wr.add(to)});
+  (f.r||[]).forEach(([p])=>rd.add(p));if(!f.ro)wr.add('aud');if(f.av)wr.add('not');
+ }else if(pg){
+  Object.entries(E).forEach(([k,e])=>{if(e.a==pg){st[k]='out';lab[k]=e.fs.length>1?e.fs.length+' funções':e.fs[0]}else if(e.b==pg)st[k]='in'});
+  if(pg=='aud')F.forEach(x=>{if(!x.ro)wr.add(x.p)});
+  else if(pg=='not')F.forEach(x=>{if(x.av)wr.add(x.p)});
+  else if(P[pg].band)F.forEach(x=>{if(x.p==pg)(x.w||[]).forEach(([to])=>wr.add(to))});
+ }
+ const mk=['mk0','mk1','mk2'].map((c,i)=>`<marker id="m${i}" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path class="${c}" d="M0 0L10 5L0 10z"/></marker>`).join('');
+ const eds=Object.entries(E).map(([k,e])=>{const c=pg?st[k]||'fade':'';return `<path class="ed ${c}" d="M${e.seg.map(q=>q[0].toFixed(1)+' '+q[1].toFixed(1)).join('L')}" marker-end="url(#m${c=='out'?1:c=='in'?2:0})"/>`}).join('');
+ const nds=Object.values(P).map(p=>{
+  const c=['nd',p.band?'band':'',p.id==pg?'sel':wr.has(p.id)?'wr':rd.has(p.id)?'rd':f?'fade':'',S.role&&!acc(S.role,p.id)?'off':''].join(' '),
+   s=S.role?ROLES[S.role][0]+': '+accTxt(S.role,p.id):p.s;
+  return `<g class="${c}" tabindex="0" role="button" aria-label="${p.n}" onclick="sel('${p.id}')" onkeydown="if(event.key=='Enter')sel('${p.id}')"><rect x="${p.x}" y="${p.y}" width="${p.w}" height="${p.h}" rx="14"/>`+
+   (p.band?`<text class="t" x="${p.x+16}" y="${p.y+30}">${p.n}</text><text class="s" x="${p.x+124}" y="${p.y+30}">${s}</text>`
+          :`<text class="t" x="${p.x+14}" y="${p.y+p.h/2-3}">${p.n}</text><text class="s" x="${p.x+14}" y="${p.y+p.h/2+15}">${s}</text>`)+'</g>'}).join('');
+ const lbs=Object.entries(lab).map(([k,t])=>{const [x,y]=E[k].mid,w=t.length*6.1+18;return `<g class="lb"><rect x="${(x-w/2).toFixed(1)}" y="${(y-10).toFixed(1)}" width="${w.toFixed(1)}" height="20" rx="10"/><text x="${x.toFixed(1)}" y="${(y+4).toFixed(1)}" text-anchor="middle">${t}</text></g>`}).join('');
+ const bd=S.flow?`<g class="bd"><circle cx="${P[pg].x+P[pg].w-4}" cy="${P[pg].y+4}" r="12"/><text x="${P[pg].x+P[pg].w-4}" y="${P[pg].y+8}" text-anchor="middle">${S.step+1}</text></g>`:'';
+ $('fig').innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="group" aria-label="Mapa das páginas do WorkSafe Compliance. As setas mostram qual página cria ou altera dados em outra."><defs>${mk}</defs>
+<rect class="bgr" width="${W}" height="${H}" onclick="clr()"/>
+<rect class="read" x="946" y="90" width="188" height="386" rx="20"/>
+<text class="col" x="30" y="108">PESSOAS</text><text class="col" x="340" y="108">CELULAR, PROVA E AÇÃO</text><text class="col" x="650" y="108">PREVENÇÃO</text><text class="col" x="960" y="108">LEITURA</text>
+${eds}${nds}${lbs}${bd}</svg>`;
+ $('flows').innerHTML=FL.map(x=>`<button class="${S.flow==x.id?'on':''}" onclick="flow('${x.id}')">${x.n}</button>`).join('');
+ $('roles').innerHTML=`<button class="${S.role?'':'on'}" onclick="role('')">Todos</button>`+Object.entries(ROLES).map(([k,v])=>`<button class="${S.role==k?'on':''}" onclick="role('${k}')">${v[0]}</button>`).join('');
+ $('panel').innerHTML=panel();
+}
+
+function fnHtml(x,open){
+ const w=(x.w||[]).map(([p,l])=>`${P[p].n}: ${l}`),r=(x.r||[]).map(([p,l])=>P[p].n+(l?': '+l:''));
+ if(!open)return `<button class="fn" onclick="selFn('${x.id}')"><b>${x.n}</b><span>${[(x.w||[]).length?'grava em '+[...new Set(x.w.map(q=>P[q[0]].n))].join(', '):'',(x.r||[]).length?'consulta '+x.r.map(q=>P[q[0]].n).join(', '):''].filter(Boolean).join(' · ')||x.d}</span></button>`;
+ return `<button class="fn on" onclick="selFn('${x.id}')"><b>${x.n}</b><span>${x.d}</span>`+
+  (w.length?`<span class="k">Cria ou altera</span><span class="v">${w.join('<br>')}</span>`:'')+
+  (r.length?`<span class="k">Consulta</span><span class="v">${r.join('<br>')}</span>`:'')+
+  (x.av?`<span class="k">Avisa</span><span class="v">${x.av[0].toUpperCase()+x.av.slice(1)}.</span>`:'')+
+  `<span class="k">Auditoria</span><span class="v">${x.ro?'Só leitura. Nada é alterado.':'A ação fica registrada.'}</span></button>`;
+}
+function panel(){
+ const f=S.fn&&FN[S.fn],pg=S.page;let h='';
+ if(S.flow){const fl=curFlow(),n=fl.steps.length;
+  h+=`<div class="flow"><div class="eye">FLUXO · PASSO ${S.step+1} DE ${n}</div><div class="n">${fl.n}</div><p>${fl.steps[S.step][1]}</p><div class="btns"><button class="btn sec" onclick="step(-1)" ${S.step?'':'disabled'}>Anterior</button><button class="btn" onclick="step(1)" ${S.step<n-1?'':'disabled'}>Próximo</button><button class="lnk" onclick="clr()">Sair do fluxo</button></div></div>`}
+ if(!pg)return `<h2>Como ler o mapa</h2><p>${Object.keys(P).length} páginas, ${F.length} funções e ${FL.length} fluxos.</p><ol><li>Clique em uma página para ver as funções dela.</li><li>Clique em uma função para ver o que ela cria, o que consulta e quem avisa.</li><li>Escolha um fluxo para seguir o passo a passo. As setas do teclado avançam e voltam.</li><li>Escolha um perfil para ver o acesso padrão a cada página.</li></ol><h3>Ideia central</h3><p>As páginas da esquerda e da direita criam tarefas e documentos no centro. O centro guarda a prova e o prazo. A coluna de leitura só mostra.</p>`;
+ const p=P[pg];h+=`<h2>${p.n}</h2><p>${p.d}</p>`;
+ if(S.flow)return h+`<h3>Função deste passo</h3>`+fnHtml(f,1);
+ const who=Object.keys(ROLES).filter(r=>acc(r,pg)).map(r=>`<span class="chip ${acc(r,pg)==2?'e':''}">${ROLES[r][0]}: ${accTxt(r,pg)}</span>`).join('');
+ h+=`<h3>Acesso padrão</h3><div class="chips">${who}</div><div class="note">Cada empresa muda isso em Ajustes.</div>`;
+ h+=`<h3>Funções</h3>`+F.filter(x=>x.p==pg).map(x=>fnHtml(x,x.id==S.fn)).join('');
+ const inc=F.filter(x=>x.p!=pg&&(x.w||[]).some(q=>q[0]==pg)),rdBy=F.filter(x=>x.p!=pg&&(x.r||[]).some(q=>q[0]==pg));
+ if(pg=='aud')h+=`<h3>Quem grava aqui</h3><p>Toda função que cria ou altera algo. As páginas com contorno azul têm funções assim.</p>`;
+ if(pg=='not')h+=`<h3>Quem avisa</h3>`+F.filter(x=>x.av).map(x=>`<button class="fn" onclick="selFn('${x.id}')"><b>${P[x.p].n} · ${x.n}</b><span>avisa ${x.av}</span></button>`).join('');
+ if(inc.length)h+=`<h3>Outras páginas gravam aqui</h3>`+inc.map(x=>`<button class="fn" onclick="selFn('${x.id}')"><b>${P[x.p].n} · ${x.n}</b><span>${x.w.filter(q=>q[0]==pg).map(q=>q[1]).join(', ')}</span></button>`).join('');
+ if(rdBy.length)h+=`<h3>Outras páginas consultam esta</h3>`+rdBy.map(x=>`<button class="fn" onclick="selFn('${x.id}')"><b>${P[x.p].n} · ${x.n}</b><span>${x.r.filter(q=>q[0]==pg).map(q=>q[1]).filter(Boolean).join(', ')||'leitura'}</span></button>`).join('');
+ return h;
+}
+
+// Autoteste: abra diagrama.html#check e veja o console. Lista vazia = dados e traçado corretos.
+function check(){const er=[];
+ F.forEach(f=>{if(!P[f.p])er.push('página '+f.id);(f.w||[]).concat(f.r||[]).forEach(([p])=>{if(!P[p])er.push('ref '+f.id+' '+p)})});
+ FL.forEach(fl=>fl.steps.forEach(([id])=>{if(!FN[id])er.push('fluxo '+fl.id+' '+id)}));
+ Object.values(E).forEach(e=>Object.values(P).forEach(p=>{if(p.id!=e.a&&p.id!=e.b&&e.seg.some(q=>q[0]>p.x-6&&q[0]<p.x+p.w+6&&q[1]>p.y-6&&q[1]<p.y+p.h+6))er.push('seta '+e.a+'>'+e.b+' cruza '+p.id)}));
+ return er}
+if(location.hash=='#check')console.log('check',check());
+render();
+</script>
+</body>
+</html>
